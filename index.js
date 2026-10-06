@@ -97,7 +97,7 @@ const fmt5=v=>{const a=Math.abs(v);if(a!==0&&(a>=1e7||a<1e-4))return v.toExponen
 const fixed=(v,d)=>(+v.toFixed(d)).toFixed(d);
 
 /* drawing */
-function niceStep(){const raw=800/s,m=10**Math.floor(Math.log10(raw)),r=raw/m,k=r<=1.5?1:r<=3.5?2:r<=7.5?5:10;return{step:k*m,div:k===2?4:5}}
+function niceStep(){const raw=80/s,m=10**Math.floor(Math.log10(raw)),r=raw/m,k=r<=1.5?1:r<=3.5?2:r<=7.5?5:10;return{step:k*m,div:k===2?4:5}}
 function label(txt,x,y,align){ctx.textAlign=align;ctx.strokeText(txt,x,y);ctx.fillText(txt,x,y)}
 function draw(){
   if(!W||!H)return;
