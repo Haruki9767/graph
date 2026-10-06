@@ -4,50 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Probability simulator</title>
-<style>
-:root{--bg:#eef1f6;--panel:#fff;--ink:#1a2236;--mute:#5a667f;--line:#d3d9e5;--accent:#2352d8;--cv:#fbfcff;--gm:#e6ebf3;--obs:#3b7ddd;--th:#d9480f;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1018;--panel:#151b26;--ink:#e6ebf5;--mute:#93a0b8;--line:#2a3445;--accent:#7aa2ff;--cv:#0f141d;--gm:#1c2535;--obs:#6aa6ff;--th:#ffa94d}}
-:root[data-theme="dark"]{--bg:#0c1018;--panel:#151b26;--ink:#e6ebf5;--mute:#93a0b8;--line:#2a3445;--accent:#7aa2ff;--cv:#0f141d;--gm:#1c2535;--obs:#6aa6ff;--th:#ffa94d}
-html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);font:14px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.app{height:100%;display:flex;flex-direction:column}
-.stage{flex:1;min-height:0;min-width:0;display:flex;flex-direction:column;padding:8px 10px 6px;gap:6px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:5px 8px;min-width:0}
-.stat b{display:block;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.stat span{color:var(--mute);font-size:11.5px}
-#info{min-height:20px;font-variant-numeric:tabular-nums;color:var(--ink)}
-.wrap{position:relative;flex:1;min-height:120px}
-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
-.foot{color:var(--mute);font-size:12.5px;display:flex;gap:12px;flex-wrap:wrap;align-items:baseline}
-.lg{display:inline-block;vertical-align:-1px;margin-right:4px}
-.lg.o{width:12px;height:10px;background:var(--obs);border-radius:2px}
-.lg.t{width:9px;height:9px;background:var(--th);border-radius:50%}
-.panel{background:var(--panel);border-top:1px solid var(--line);padding:10px 12px 12px;overflow:auto;max-height:46%}
-.btns{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:6px}
-button,select,input{font:inherit;color:var(--ink)}
-.btns button{padding:9px 6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);cursor:pointer}
-.btns .pri{background:var(--accent);color:var(--panel);border-color:var(--accent);font-weight:650}
-.prog{height:4px;background:var(--gm);border-radius:2px;margin:8px 0 2px;overflow:hidden}
-#pb{height:100%;width:0;background:var(--accent)}
-.sm{color:var(--mute);font-size:12.5px;min-height:18px}
-.seg{display:flex;margin:6px 0 8px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.seg button{flex:1;padding:6px;background:none;border:0;color:var(--mute);cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--panel);font-weight:600}
-.f{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px;color:var(--mute)}
-.f[hidden]{display:none}
-.f select,.f input[type=number]{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 6px}
-.f input[type=number]{width:96px}
-.chip{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 10px;cursor:pointer;font-size:13px}
-.f input[type=range]{flex:1;min-width:120px;accent-color:var(--accent)}
-button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-@media (min-width:760px){
-.app{flex-direction:row}
-.panel{width:320px;max-height:none;border-top:0;border-left:1px solid var(--line);order:2}
-.stage{padding:12px 14px 10px}
-}
-</style>
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
 <div class="app">
