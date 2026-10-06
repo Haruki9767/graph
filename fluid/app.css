@@ -1,0 +1,24 @@
+:root{--bg:#06101c;--glass:rgba(255,255,255,.8);--ink:#14213d;--mute:#52607a;--line:rgba(20,33,61,.18);--accent:#1c5fd6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glass:rgba(14,20,32,.74);--ink:#e8edf7;--mute:#9aa7bf;--line:rgba(255,255,255,.16);--accent:#7aa2ff}}
+:root[data-theme="dark"]{--glass:rgba(14,20,32,.74);--ink:#e8edf7;--mute:#9aa7bf;--line:rgba(255,255,255,.16);--accent:#7aa2ff}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);font:14px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);-webkit-user-select:none;user-select:none}
+canvas{position:fixed;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;display:block}
+.hint{position:fixed;left:0;right:0;top:calc(18px + env(safe-area-inset-top,0px));text-align:center;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6);font-size:16px;pointer-events:none;transition:opacity .8s}
+.hint.off{opacity:0}
+.panel{position:fixed;left:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:min(330px,calc(100% - 20px));box-sizing:border-box;padding:10px 12px;background:var(--glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px}
+.hd{display:flex;justify-content:space-between;align-items:center}
+.hd b{font-size:15px}
+button,select,input{font:inherit;color:var(--ink)}
+.hd button{background:none;border:0;color:var(--mute);cursor:pointer;padding:2px 4px}
+.panel.min .body{display:none}
+.row{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:8px;margin-top:8px;color:var(--mute)}
+.row input[type=range]{width:100%;accent-color:var(--accent)}
+.maps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.maps button{border:2px solid transparent;border-radius:9px;padding:0;background:none;cursor:pointer;overflow:hidden;font-size:12px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.maps button span{display:block;padding:11px 0 5px}
+.maps button[aria-pressed="true"]{border-color:var(--accent)}
+.act{display:flex;gap:8px;align-items:center;margin-top:10px}
+.act .clr{flex:1;padding:9px;border-radius:9px;border:1px solid var(--line);background:var(--accent);color:#fff;font-weight:650;cursor:pointer}
+.act label{display:flex;gap:6px;align-items:center;color:var(--mute);cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
